@@ -444,6 +444,7 @@ body {
     padding: clamp(1rem, 3vw, 1.8rem) clamp(1.2rem, 4vw, 2.5rem);
     min-width: clamp(70px, 18vw, 118px);
     backdrop-filter: blur(6px);
+   white-space: nowrap;
 }
 
 .cd-num {
