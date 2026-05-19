@@ -278,7 +278,7 @@ function submitRSVP() {
     // const phone = document.getElementById('rsvp-phone')?.value.trim();
     const message = document.getElementById('rsvp-message')?.value.trim() || '';
 
-    if (!name || !phone) {
+    if (!name) {
         alert('Please fill in your name and phone number 🙏');
         return;
     }
