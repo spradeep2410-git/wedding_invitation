@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nithya &amp; Pradeep — Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Pinyon+Script&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <canvas id="petals"></canvas>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="home">
+
+        <!-- Deep blue radial gradient background — two arcs top-left like ref image -->
+        <div class="hero-arc hero-arc-1"></div>
+        <div class="hero-arc hero-arc-2"></div>
+
+        <!-- Subtle dot texture overlay -->
+        <div class="hero-dots"></div>
+
+        <div class="hero-inner">
+
+
+            <p class="hero-bismillah anim-item" style="--d:0.1s">॥ அவளும் நானும்॥</p>
+            <!-- <p class="hero-bismillah anim-item" style="--d:0.1s">॥ Forever ॥</p> -->
+            <!-- ② Names — each word animates separately, just like ref -->
+            <h1 class="hero-names">
+                <span class="name-word anim-item" style="--d:0.35s">Nithya</span>
+                <span class="name-amp anim-item" style="--d:0.65s">&amp;</span>
+                <span class="name-word anim-item" style="--d:0.90s">Pradeep</span>
+            </h1>
+
+            <!-- ③ Tagline italic -->
+            <p class="hero-tagline anim-item" style="--d:1.15s">Together is a beautiful place to be</p>
+
+            <!-- ④ Gold ornament -->
+            <div class="hero-ornament anim-item" style="--d:1.35s">
+                <svg viewBox="0 0 160 28" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0"   y1="14" x2="56"  y2="14" stroke="#c9a84c" stroke-width="0.9" opacity="0.55"/>
+        <circle cx="66"  cy="14" r="2.5" fill="#c9a84c" opacity="0.65"/>
+        <circle cx="80"  cy="14" r="5.5" fill="#c9a84c" opacity="0.45"/>
+        <circle cx="94"  cy="14" r="2.5" fill="#c9a84c" opacity="0.65"/>
+        <line x1="104" y1="14" x2="160" y2="14" stroke="#c9a84c" stroke-width="0.9" opacity="0.55"/>
+      </svg>
+            </div>
+
+            <!-- ⑤ Invite text -->
+            <p class="hero-invite anim-item" style="--d:1.55s">
+                With the blessings of our families, we joyfully invite you<br/> to celebrate the auspicious occasion of our wedding.
+            </p>
+
+            <!-- ⑥ Date pill -->
+            <!-- <div class="hero-date-pill anim-item" style="--d:1.80s">
+                <span class="hero-date-text">18th June 2026 &nbsp;·&nbsp; Thursday &nbsp;·&nbsp; 8:30 AM</span>
+            </div> -->
+
+        </div>
+        <!-- /.hero-inner -->
+    </section>
+
+
+    <!-- ═══ SCRATCH CARD ═══ -->
+    <section class="section scratch-section" id="scratch">
+        <div class="section-header reveal-on-scroll">
+            <span class="section-tag">A little surprise</span>
+            <h2 class="section-title">Scratch to Reveal the Date</h2>
+            <!-- <p class="section-sub">Use your finger or mouse to unveil our special day</p> -->
+            <p class="section-sub">to unveil our special day</p>
+        </div>
+        <div class="scratch-wrapper">
+            <div class="scratch-container reveal-on-scroll">
+                <div class="scratch-reveal" id="scratch-reveal">
+                    <div class="reveal-content">
+                        <div class="reveal-floral">
+                            <svg viewBox="0 0 200 38" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#42b6ce" opacity="0.42">
+                <circle cx="58"  cy="24" r="6"/><circle cx="73"  cy="13" r="4.5"/><circle cx="86"  cy="23" r="5.5"/>
+                <circle cx="142" cy="24" r="6"/><circle cx="127" cy="13" r="4.5"/><circle cx="114" cy="23" r="5.5"/>
+              </g>
+              <line x1="90" y1="19" x2="110" y2="19" stroke="#c9a84c" stroke-width="0.8" opacity="0.65"/>
+              <circle cx="100" cy="19" r="2.5" fill="#c9a84c" opacity="0.65"/>
+            </svg>
+                        </div>
+                        <p class="reveal-label">Wedding Date</p>
+                        <p class="reveal-date">18th June</p>
+                        <p class="reveal-year">2026</p>
+                        <p class="reveal-day">Thursday</p>
+                        <div class="reveal-ornament">🌸</div>
+                        <p class="reveal-muhurta">Muhurtam: 8:30 AM – 9:30 AM</p>
+                    </div>
+                </div>
+                <canvas id="scratch-canvas"></canvas>
+            </div>
+            <button class="reset-btn" id="reset-btn" onclick="resetScratch()">↺ Try Again</button>
+        </div>
+    </section>
+
+
+    <!-- ═══ COUNTDOWN ═══ -->
+    <section class="section countdown-section" id="countdown">
+        <div class="section-header reveal-on-scroll">
+            <span class="section-tag">Counting the moments</span>
+            <h2 class="section-title">The Big Day Approaches</h2>
+        </div>
+        <div class="countdown-grid">
+            <div class="cd-box reveal-on-scroll"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Days</span></div>
+            <div class="cd-box reveal-on-scroll"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Hours</span></div>
+            <div class="cd-box reveal-on-scroll"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minutes</span></div>
+            <div class="cd-box reveal-on-scroll"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Seconds</span></div>
+        </div>
+        <!-- <p class="countdown-note">until we say "I do" 💍</p> -->
+        <p class="countdown-note">Hard launch of the forever era 💍</p>
+    </section>
+
+
+    <!-- ═══ EVENTS ═══ -->
+    <section class="section events-section" id="events">
+        <div class="section-header reveal-on-scroll">
+            <span class="section-tag">Save the dates</span>
+            <h2 class="section-title">Celebration Ceremonies</h2>
+        </div>
+        <div class="events-grid">
+            <div class="event-card reveal-on-scroll">
+                <div class="event-icon">❀࿐</div>
+                <h3 class="event-name">Mehndi</h3>
+                <p class="event-date">16 Jun 2026</p>
+                <p class="event-time">⏰ 6:00 PM – 8:00 PM</p>
+                <p class="event-venue">📍 Bride's Residence<br/>402, KK Hights, 3rd cross st, Anantapur</p>
+                <!-- <p class="event-dress">👗 Yellow &amp; Green</p> -->
+            </div>
+            <div class="event-card reveal-on-scroll">
+                <div class="event-icon">💒</div>
+                <h3 class="event-name">Wedding Reception</h3>
+                <p class="event-date">17 Jun 2026</p>
+                <p class="event-time">⏰ 6.30:00 PM – 10:00 PM</p>
+                <!-- <p class="event-venue">📍 Bride's Residence<br/>42, MG Road, Mylapore, Chennai</p> -->
+                <p class="event-venue">📍 SJR Convention Hall <br/>Anantapur – 515002</p>
+                <!-- <p class="event-dress">👗 Yellow &amp; Green</p> -->
+            </div>
+            <div class="event-card featured reveal-on-scroll">
+                <div class="event-badge">Main Event</div>
+                <div class="event-icon">💍</div>
+                <h3 class="event-name">Wedding Ceremony</h3>
+                <p class="event-date">18 Jun 2026</p>
+                <p class="event-time">⏰ 8:30 AM – 9:30 AM</p>
+                <p class="event-venue">📍 SJR Convention Hall <br/>Anantapur – 515002</p>
+                <!-- <p class="event-dress">👗 Traditional Silk</p> -->
+            </div>
+            <div class="event-card reveal-on-scroll">
+                <div class="event-icon">💃🏻🕺🏽</div>
+                <h3 class="event-name">Get Together</h3>
+                <p class="event-date">28 Jun 2026</p>
+                <p class="event-time">⏰ 7:00 PM – 10:00 PM</p>
+                <p class="event-venue">📍 Olive and Orchard Banquet Halls<br/>Kodambakkam, Chennai – 600024</p>
+                <!-- <p class="event-dress">👗 Ethnic Formal</p> -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══ MAP ═══ -->
+    <section class="section map-section" id="venue">
+        <div class="section-header reveal-on-scroll">
+            <span class="section-tag">Find your way</span>
+            <h2 class="section-title">Venue Locations</h2>
+        </div>
+        <div class="venue-tabs reveal-on-scroll">
+            <button class="vtab active" onclick="switchVenue('wedding',this)">Wedding Venue</button>
+            <button class="vtab" onclick="switchVenue('reception',this)">Get Together</button>
+        </div>
+        <div class="map-wrapper reveal-on-scroll">
+            <div class="venue-info">
+                <div>
+                    <h3 id="venue-name">SJR Conventional Hall</h3>
+                    <p id="venue-addr">Anantapur – 515002, Andhra Pradesh</p>
+                </div>
+                <a class="directions-btn" id="directions-link" href="https://maps.app.goo.gl/KPDPSbDJdaaRQCka9" target="_blank">🗺️ Google Maps</a>
+            </div>
+            <div class="map-frame-wrapper">
+                <iframe id="map-iframe" src="https://maps.google.com/maps?q=14.6583,77.5986&z=16&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══ GALLERY ═══ -->
+    <section class="section gallery-section" id="gallery">
+        <div class="section-header reveal-on-scroll">
+            <span class="section-tag">Us, together</span>
+            <h2 class="section-title">Our Story in Frames</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card g1 reveal-on-scroll">
+                <img src="img/1.png" alt="">
+                <div class="gallery-overlay"><span>❤️ First meeting</span></div>
+            </div>
+            <div class="gallery-card g2 reveal-on-scroll">
+                <img src="img/4.jpeg" alt="">
+                <div class="gallery-overlay"><span>🌺 Our travels</span></div>
+            </div>
+            <div class="gallery-card g3 reveal-on-scroll">
+                <img src="img/3.jpg" alt="">
+                <div class="gallery-overlay"><span>🎉 Engagement</span></div>
+            </div>
+            <div class="gallery-card g4 reveal-on-scroll">
+                <img src="img/2.jpg" alt="">
+                <div class="gallery-overlay"><span>✨ Forever</span></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══ SEND BLESSINGS ═══ -->
+    <section class="section rsvp-section" id="rsvp">
+        <div class="section-header reveal-on-scroll">
+            <span class="section-tag">With love &amp; prayers</span>
+            <h2 class="section-title">Send Your Blessings</h2>
+            <!-- <p class="section-sub">Please confirm your presence by 31st May 2026</p> -->
+        </div>
+        <div class="rsvp-form-wrapper reveal-on-scroll">
+            <div class="rsvp-field">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your full name" id="rsvp-name" />
+            </div>
+            <!-- <div class="rsvp-field">
+                <label>Phone / WhatsApp</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" id="rsvp-phone" />
+            </div> -->
+            <div class="rsvp-field">
+                <label>Your Blessings &amp; Message</label>
+                <textarea id="rsvp-message" rows="6" placeholder="Write your heartfelt wishes…"></textarea>
+            </div>
+            <button class="rsvp-submit" onclick="submitRSVP()">🙏 Send Your Blessings</button>
+            <div class="rsvp-success" id="rsvp-success">
+                🎉 Thank you for your blessings! We can't wait to celebrate with you!
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <div class="footer-seal">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+      <defs>
+        <radialGradient id="fg1" cx="38%" cy="32%">
+          <stop offset="0%" stop-color="#f0d070"/>
+          <stop offset="100%" stop-color="#8a5c10"/>
+        </radialGradient>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="rgba(201,146,42,0.15)"/>
+      <circle cx="50" cy="50" r="42" fill="url(#fg1)"/>
+      <circle cx="50" cy="50" r="30" fill="rgba(0,0,0,0.12)"/>
+      <circle cx="50" cy="50" r="28" fill="url(#fg1)"/>
+      <text x="50" y="58" text-anchor="middle" font-family="Pinyon Script, cursive" font-size="26" fill="#4a2a06">PN</text>
+    </svg>
+        </div>
+        <h2 class="footer-names">Pradeep &amp; Nithya Sree</h2>
+        <p class="footer-quote">"Two souls, one destiny — blessed by the stars, united by love."</p>
+        <p class="footer-families"><em>Senthil Arumugam &amp; Suganthi family</em> &nbsp;⟡&nbsp; <em>Pesalavari family</em></p>
+        <p class="footer-copy">Made with ❤️</p>
+        <!-- <p class="footer-copy">Made with ❤️ · Jun 18, 2026</p> -->
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
