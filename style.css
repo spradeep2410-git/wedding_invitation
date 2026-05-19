@@ -431,6 +431,7 @@ body {
     justify-content: center;
     gap: clamp(0.8rem, 3vw, 2rem);
     flex-wrap: wrap;
+    white-space: nowrap;
 }
 
 .cd-box {
