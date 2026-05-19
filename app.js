@@ -278,11 +278,6 @@ function submitRSVP() {
     // const phone = document.getElementById('rsvp-phone')?.value.trim();
     const message = document.getElementById('rsvp-message')?.value.trim() || '';
 
-    if (!name) {
-        alert('Please fill in your name and phone number 🙏');
-        return;
-    }
-
     // Build WhatsApp message
     const text = `🌸 *Wedding RSVP — Pradeep & Nithya Sree*\n\n` +
         `👤 *Name:* ${name}\n` +
