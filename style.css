@@ -1179,3 +1179,11 @@ body {
         width: 94vw;
     }
 }
+
+.temple-emoji {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    margin: 0 0.1em;
+}
