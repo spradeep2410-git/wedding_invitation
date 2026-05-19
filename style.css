@@ -1229,3 +1229,20 @@ body {
     transform: translateY(4px);
     text-shadow: 0 4px 16px rgba(201, 168, 76, 0.45);
 }
+
+/* ── Ganesha Image ── */
+.ganesh-emoji {
+    display: block;
+    margin: 12px auto;
+    width: 75px;
+    height: 80px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .ganesh-emoji {
+        width: 60px;
+        height: 60px;
+    }
+}
