@@ -1187,3 +1187,45 @@ body {
     vertical-align: middle;
     margin: 0 0.1em;
 }
+
+.footer-names-1 {
+    font-family: var(--font-script);
+    font-size: clamp(1.2rem, 6vw, 4rem);
+    color: var(--gold-light);
+    margin-bottom: 0.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-names-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0 clamp(0.3rem, 2vw, 1.2rem);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    width: 100%;
+}
+
+.name-word-1 {
+    font-family: var(--font-script);
+    font-size: clamp(1.8rem, 10vw, 8.5rem);
+    color: #ffffff;
+    display: inline-block;
+    white-space: nowrap;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.10), 0 6px 32px rgba(0, 0, 0, 0.18);
+}
+
+.name-amp-1 {
+    font-family: var(--font-script);
+    font-size: clamp(1rem, 5vw, 4.2rem);
+    color: var(--gold-light);
+    display: inline-block;
+    flex-shrink: 0;
+    transform: translateY(4px);
+    text-shadow: 0 4px 16px rgba(201, 168, 76, 0.45);
+}
